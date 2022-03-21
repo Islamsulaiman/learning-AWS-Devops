@@ -12,8 +12,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 const sequelize = new Sequelize(
- "postgres://postgres:postgres@database-1.ceag4gkacopu.us-east-1.rds.amazonaws.com:5432/postgres"
-
+  "postgres://postgres:postgres@database-1.ceag4gkacopu.us-east-1.rds.amazonaws.com:5432/postgres"
 );
 
 class User extends Model {}
@@ -61,11 +60,13 @@ app.use((req, res, next) => {
 
 app.get("/contacts", async (req, res) => {
   const users = await User.findAll();
-  res.send(users.map(({ dataValues }) => ({
-    id: dataValues.id,
-    name: dataValues.name,
-    email: dataValues.email
-  })));
+  res.send(
+    users.map(({ dataValues }) => ({
+      id: dataValues.id,
+      name: dataValues.name,
+      email: dataValues.email,
+    }))
+  );
 });
 
 app.delete("/contacts/:id", (req, res) => {
