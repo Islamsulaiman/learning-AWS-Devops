@@ -6,12 +6,12 @@
     <title>Does RDS work?</title>
   </head>
   <body>
-    <button onclick="showContacts()">Show Contacts</button>
+    <button onclick="showContacts()">Show Contacts version 2</button>
     <ul id="contacts"></div>
   </body>
   <script>
     const showContacts = () => {
-      fetch("http://learning-AWS-Devops-dev.us-east-1.elasticbeanstalk.com/contacts", {
+      fetch("http://localhost:4000/contacts", {
         headers: { Authorization: "whatever-you-want" },
       })
       .then(res => res.json())
