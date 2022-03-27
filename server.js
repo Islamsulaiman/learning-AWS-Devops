@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 const sequelize = new Sequelize(
-  "postgres://postgres:postgres@database-1.ceag4gkacopu.us-east-1.rds.amazonaws.com:5432/postgres"
+  "postgres://postgres:postgres@database-2.ceag4gkacopu.us-east-1.rds.amazonaws.com:5432/postgres"
 );
 
 class User extends Model {}
